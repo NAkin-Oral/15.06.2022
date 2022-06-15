@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import List from './List';
+import Alert from './Alert';
 
 function App() {
+  const [name, setName] = useState('');
+  const [list, seList] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editID, setEditID] = useState(null);
+  const [alert, setAlert] = useState({ show: false, msg: '', type: '' });
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log('hello');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="section-center">
+      <form className="grocery-form" onSubmit={handleSubmit}></form>
+      <div className="grocety-container">
+        <List />
+        <button className="clear-btn">Clear Items</button>
+      </div>
+    </section>
   );
 }
 
