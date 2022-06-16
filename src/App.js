@@ -38,7 +38,7 @@ function App() {
       <form className="grocery-form" onSubmit={handleSubmit}>
         {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
 
-        <h3>grocery bud</h3>
+        <h3>Grocery Bud</h3>
         <div className="form-control">
           <input
             type="text"
@@ -55,7 +55,7 @@ function App() {
       {list.length > 0 && (
         <div className="grocery-container">
           <List items={list} />
-          <button className="clear-btn">clear items</button>
+          <button className="clear-btn">Clear Items</button>
         </div>
       )}
     </section>
